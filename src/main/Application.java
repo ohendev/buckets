@@ -9,7 +9,7 @@ public class Application {
     private static final Bucket bucketOne = new Bucket(3,0);
     private static final Bucket bucketTwo = new Bucket(5, 0);
     private static final Scanner scanner = new Scanner(System.in);
-    private static  final int GOAL = 4;
+    private static final int GOAL = 4;
     private static int moves = 0;
 
     public static void main(String[] args) {
@@ -67,7 +67,7 @@ public class Application {
                 bucketOne.transferFromBucket(bucketTwo);
                 break;
             default:
-                System.out.println("Something unexpected happens sorry!");
+                System.out.println("Something unexpected happened sorry!");
                 break;
         }
         moves++;
