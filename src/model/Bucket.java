@@ -3,59 +3,41 @@ package model;
 public class Bucket {
 
     private int capacity;
-    private int contains;
-    private boolean full;
-    private boolean empty;
+    private int content;
 
     public Bucket(int capacity, int contains) {
         this.capacity = capacity;
-        this.contains = contains;
-        this.full = isFull();
-        this.empty = isEmpty();
+        this.content = contains;
     }
 
     public int getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
+    public int getContent() {
+        return content;
     }
 
-    public int getContains() {
-        return contains;
+    public void setContent(int content) {
+        this.content = content;
     }
-
-    public void setContains(int contains) {
-        this.contains = contains;
-    }
-
-    public boolean isFull() {
-        return contains == capacity;
-    }
-
-    public boolean isEmpty() {
-        return contains == 0;
-    }
-
 
     public void fillBucket() {
-        this.contains = capacity;
+        this.content = capacity;
     }
 
     public void EmptyBucket() {
-        this.contains = 0;
+        this.content = 0;
     }
 
-    public void transferFromBucket(Bucket bucket) {
-        int leftInOtherBucket;
-        leftInOtherBucket = (this.contains + bucket.getContains()) - this.capacity;
-        this.contains += bucket.getContains();
-        if(this.contains > this.capacity) {
-            this.contains = this.capacity;
-            bucket.setContains(leftInOtherBucket);
+    public void transferFromBucket(Bucket pouringBucket) {
+        int whatsLeftInPouringBucket = (this.content + pouringBucket.getContent()) - this.capacity;
+        this.content += pouringBucket.getContent();
+        if(this.content > this.capacity) {
+            this.content = this.capacity;
+            pouringBucket.setContent(whatsLeftInPouringBucket);
         } else {
-            bucket.setContains(0);
+            pouringBucket.setContent(0);
         }
     }
 }

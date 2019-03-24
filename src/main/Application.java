@@ -18,7 +18,7 @@ public class Application {
 
         do {
             askUserForAction();
-        } while (bucketTwo.getContains() != GOAL);
+        } while (bucketTwo.getContent() != GOAL);
 
         System.out.println("Congratulations! You win in " + moves + " moves.");
 
@@ -89,8 +89,8 @@ public class Application {
         System.out.println();
         System.out.println("BUCKET STATUS:");
         System.out.println();
-        System.out.println("BucketOne contains: " + bucketOne.getContains() + " liters.");
-        System.out.println("BucketTwo contains: " + bucketTwo.getContains() + " liters.");
+        System.out.println("BucketOne contains: " + bucketOne.getContent() + " liters.");
+        System.out.println("BucketTwo contains: " + bucketTwo.getContent() + " liters.");
         System.out.println();
         System.out.println("------------------------------------------------------------");
         System.out.println();
